@@ -20,6 +20,15 @@ public class FlapmapwithObject {
 		System.out.println("all phone numbers");
 		System.out.println(employee); 
 		
+		List<Long> inOneList = employee.stream().flatMap(Collection::stream).collect(Collectors.toList());
+		System.out.println("Employes in one list"+inOneList);
+		
+		List<Long> listPhone = emps.stream().map(Emp::getPhones).flatMap(Collection::stream).collect(Collectors.toList());
+		System.out.println("========");
+		System.out.println(listPhone);
+		System.out.println("========");
+		
+		
 		// single list formate
 		System.out.println("single list formate");
 		List<String> singlelist = emps.stream()

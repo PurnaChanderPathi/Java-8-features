@@ -38,6 +38,10 @@ public class reduceExp {
 		.reduce(Integer::sum)
 		.ifPresent(System.out::println);
 		
+		System.out.println("*******************");
+		
+		System.out.println("*******************");
+		
 		List<Emp> employees = Arrays.asList(new Emp(18, "virat", 18),
 											new Emp(45, "Rohit", 45),
 											new Emp(12, "UV", 12));

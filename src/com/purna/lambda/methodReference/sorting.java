@@ -19,14 +19,17 @@ public class sorting {
 		System.out.println("names in accending oder");
 		List<String> names = Arrays.asList("purna","chandu","pathi","raghu","krishna");
 		//Collections.sort(names);
-		//names.sort((name1,name2) -> -name1.compareTo(name2)); using lambda
-		names.sort(String::compareTo);
-		//Collections.sort(names,Comparator.reverseOrder()); //reverse
+//		names.sort((name1,name2) -> name1.compareTo(name2)); // using lambda
+//		names.sort(String::compareTo);
+		Collections.sort(names,Comparator.reverseOrder()); //reverse
+		System.out.println("*************");
 		System.out.println(names);
+		System.out.println("*************");
 		
 		System.out.println("numbers in accending oder");
 		List<Integer> numbers = Arrays.asList(5,8,3,6,12,78,45,22);
-		numbers.sort(Integer::compareTo);
+//		numbers.sort(Integer::compareTo);
+		Collections.sort(numbers,Comparator.reverseOrder());
 		System.out.println(numbers);
 		
 		//product
@@ -48,7 +51,8 @@ public class sorting {
 		
 		// list sort
 		System.out.println("List sort for pcost");
-		products.sort(Comparator.comparingDouble(Product::getPcost));
+//		products.sort(Comparator.comparingDouble(Product::getPcost));
+		Collections.sort(products,Comparator.comparing(Product::getPcost));
 		//products.sort(Comparator.comparingDouble(Product::getPcost).reversed()); //reverse
 		products.forEach(System.out::println);
 		

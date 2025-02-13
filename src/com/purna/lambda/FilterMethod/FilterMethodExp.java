@@ -2,6 +2,7 @@
 //used to filter the data based on condition
 package com.purna.lambda.FilterMethod;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -14,6 +15,17 @@ public class FilterMethodExp {
 		System.out.println("Filtered the Even data and Printing");
 		numbers.stream().filter(i -> i%2==0)
 		.forEach(number -> System.out.println(number));
+		
+		List<Integer> evennumber = new ArrayList<>();
+		
+		for(int number : numbers) {
+			if(number % 2 == 0) {
+				evennumber.add(number);
+			}
+		}
+		System.out.println("Even Numbers");
+		System.out.println(evennumber);
+		
 		
 		//odd Numbers
 		System.out.println("Filtered the odd data and Printing");

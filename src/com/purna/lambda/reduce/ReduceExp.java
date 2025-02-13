@@ -1,6 +1,8 @@
 package com.purna.lambda.reduce;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 //note:-
@@ -38,7 +40,18 @@ public class ReduceExp {
 		   .get();
 		   
 		   System.out.println(totalRanks);
+		   
+		   int totalR = ranks.stream().filter(i -> i<5).map(rank -> rank*5).reduce((rank1,rank2) -> rank1+rank2).get();
+		   System.out.println(totalR);
+		   
+		   List<String> listNames = List.of("Purna","Chander","Swathi","Raghu","Krishna");
+		   
+		   String strTotal = listNames.stream().filter(name -> name.startsWith("K") && name.length() >=4)
+				   .map(name -> "Pathi ".concat(name)).reduce((x,y) -> x+y).get();
+		   System.out.println(strTotal);
 						 
+		   List<String> addSurname = listNames.stream().map(name -> "Pathi ".concat(name)).collect(Collectors.toList());
+		   System.out.println(addSurname);
 						 
 		
 

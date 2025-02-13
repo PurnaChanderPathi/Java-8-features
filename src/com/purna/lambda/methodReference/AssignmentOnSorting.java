@@ -18,23 +18,27 @@ public class AssignmentOnSorting {
 										 new Product(2, "charger", 300));
 		
 		//stream.sorted using pid
-		System.out.println("stream.sorted using pid");
-		products.stream()
-		.sorted(Comparator.comparingInt(Product::getPid))
-		//.sorted(Comparator.comparingInt(Product::getPid).reversed()) reverse
-		.forEach(System.out::println);
+//		System.out.println("stream.sorted using pid");
+//		products.stream()
+//		.sorted(Comparator.comparingInt(Product::getPid))
+//		//.sorted(Comparator.comparingInt(Product::getPid).reversed()) reverse
+//		.forEach(System.out::println);
+		
+		//reverse
+//		products.stream().sorted(Comparator.comparingInt(Product::getPid).reversed())
+//		.forEach(System.out::println);
 		
 		//stream.sorted using pname
-		System.out.println("stream.sorted using pname");
-		products.stream()
-		.sorted(Comparator.comparing(Product::getPname))
-		.forEach(System.out::println);
+//		System.out.println("stream.sorted using pname");
+//		products.stream()
+//		.sorted(Comparator.comparing(Product::getPname))
+//		.forEach(System.out::println);
 		
 		//stream.sorted using pcost
-				System.out.println("stream.sorted using pcost");
-				products.stream()
-				.sorted(Comparator.comparingDouble(Product::getPcost))
-				.forEach(System.out::println);
+//				System.out.println("stream.sorted using pcost");
+//				products.stream()
+//				.sorted(Comparator.comparingDouble(Product::getPcost))
+//				.forEach(System.out::println);
 	}
 
 }

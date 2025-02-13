@@ -16,18 +16,25 @@ public class MapMethodEmp {
 		.map(emp -> emp.getEname()+" "+"Cricketer")
 		.forEach(emp -> System.out.println(emp));
 
-		//Filter people who get salary more then 18 add 1 then print the data
-		emps.stream()
-		.filter(emp -> emp.getEsal()>=18)
-		.map(emp ->{ emp.setEsal(emp.getEsal()+1);return emp;})
-		.forEach(emp -> System.out.println(emp));
+//		//Filter people who get salary more then 18 add 1 then print the data
+//		emps.stream()
+//		.filter(emp -> emp.getEsal()>=18)
+//		.map(emp ->{ emp.setEsal(emp.getEsal()+1);return emp;})
+//		.forEach(emp -> System.out.println(emp));
+//		
+//		//adding extra name for specific selected enames and saving in list format
+//		List<Emp> employee = emps.stream()
+//		.filter(emp -> emp.getEsal()>=18)
+//		.map(emp -> {emp.setEname(emp.getEname()+" "+"Cricketer"); return emp;})
+//		.collect(Collectors.toList());
+//		employee.forEach(emp -> System.out.println(emp));
 		
-		//adding extra name for specific selected enames and saving in list format
-		List<Emp> employee = emps.stream()
-		.filter(emp -> emp.getEsal()>=18)
-		.map(emp -> {emp.setEname(emp.getEname()+" "+"Cricketer"); return emp;})
-		.collect(Collectors.toList());
-		employee.forEach(emp -> System.out.println(emp));
+		// using MethodReference
+		 emps.stream()
+				.filter(emp -> emp.getEsal() > 18)
+				.map(emp -> {emp.setEname(emp.getEname()+" "+"Cricketer"); return emp;})
+				.forEach(System.out::println);
+
 		
 		
 		
